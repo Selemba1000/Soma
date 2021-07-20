@@ -5,7 +5,7 @@ buildscript {
 
 	repositories {
 		mavenLocal()
-		maven { url = uri("https://dl.bintray.com/korlibs/korlibs") }
+		//maven { url = uri("https://dl.bintray.com/korlibs/korlibs") }
 		maven { url = uri("https://plugins.gradle.org/m2/") }
 		mavenCentral()
 		google()
@@ -19,7 +19,7 @@ apply<KorgeGradlePlugin>()
 
 korge {
 	id = "com.dod.Soma"
-	//supportBox2d()
+	supportBox2d()
 // To enable all targets at once
 
 	//targetAll()
