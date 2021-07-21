@@ -18,9 +18,9 @@ import kotlinx.coroutines.launch
 class IntroScene : Scene() {
     override suspend fun Container.sceneInit(){
 
-        val logo = Image(resourcesVfs["Logos/SOMA_Logo_w.png"].readBitmapSlice()).apply {
+        val logo = Image(resourcesVfs["Logos/DOD_logo_pixel_w.png"].readBitmapSlice()).apply {
             position(GameModule.size.width / 2.0 - 256, GameModule.size.height / 2.0 -1024)
-            scale = 0.53
+            scale = 1.0
         }
         addChild(logo)
 
