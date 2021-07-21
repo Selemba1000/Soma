@@ -18,7 +18,7 @@ class StartScene : Scene() {
         addChild(background)
 
         val startbutton = Image(resourcesVfs["Buttons/play_unpressed.png"].readBitmapSlice()).apply {
-            position(GameModule.size.width / 2.0 - 144, GameModule.size.height / 2.0 - 196)
+            position(GameModule.size.width / 2.0 - 144, GameModule.size.height / 2.0 - 171)
             scale = 0.3
             onOver { bitmap = resourcesVfs["Buttons/play_hover.png"].readBitmapSlice()}
             onOut { bitmap = resourcesVfs["Buttons/play_unpressed.png"].readBitmapSlice() }
@@ -30,7 +30,7 @@ class StartScene : Scene() {
         addChild(startbutton)
 
         val creditsbutton = Image(resourcesVfs["Buttons/credits_unpressed.png"].readBitmapSlice()).apply {
-            position(GameModule.size.width / 2.0 - 144, GameModule.size.height / 2.0 - 48)
+            position(GameModule.size.width / 2.0 - 144, GameModule.size.height / 2.0 - 23)
             scale = 0.3
             onOver { bitmap = resourcesVfs["Buttons/credits_hover.png"].readBitmapSlice()}
             onOut { bitmap = resourcesVfs["Buttons/credits_unpressed.png"].readBitmapSlice() }
@@ -42,7 +42,7 @@ class StartScene : Scene() {
         addChild(creditsbutton)
 
         val exitbutton  = Image(resourcesVfs["Buttons/exit_unpressed.png"].readBitmapSlice()).apply {
-            position(GameModule.size.width / 2.0 - 144, GameModule.size.height / 2.0 + 100)
+            position(GameModule.size.width / 2.0 - 144, GameModule.size.height / 2.0 + 125)
             scale = 0.3
             onOver { bitmap = resourcesVfs["Buttons/exit_hover.png"].readBitmapSlice()}
             onOut { bitmap = resourcesVfs["Buttons/exit_unpressed.png"].readBitmapSlice() }
