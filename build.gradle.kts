@@ -20,6 +20,9 @@ apply<KorgeGradlePlugin>()
 korge {
 	id = "com.dod.Soma"
 	supportBox2d()
+
+	addDependency("commonMainApi","com.soywiz.korlibs.kbox2d:kbox2d:2.2.0")
+
 // To enable all targets at once
 
 	//targetAll()
