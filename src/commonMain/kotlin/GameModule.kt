@@ -15,6 +15,8 @@ object GameModule : Module() {
     override val scaleMode: ScaleMode = ScaleMode.EXACT
     override val mainScene: KClass<out Scene> = IntroScene::class
     override val size: SizeInt = SizeInt(1920,1080)
+    override val icon: String = "Logos/TaskBarLogo.png"
+    override val title: String = "SOMA"
 
     override suspend fun AsyncInjector.configure() {
         mapPrototype { IntroScene() }
