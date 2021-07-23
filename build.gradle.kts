@@ -19,7 +19,7 @@ apply<KorgeGradlePlugin>()
 
 korge {
 	id = "com.dod.Soma"
-	supportBox2d()
+	//supportBox2d()
 // To enable all targets at once
 
 	//targetAll()

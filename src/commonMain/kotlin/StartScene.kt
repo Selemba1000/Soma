@@ -35,7 +35,7 @@ class StartScene : Scene() {
             onOver { bitmap = resourcesVfs["Buttons/credits_hover.png"].readBitmapSlice()}
             onOut { bitmap = resourcesVfs["Buttons/credits_unpressed.png"].readBitmapSlice() }
             onClick{
-                bitmap = resourcesVfs["Buttons/play_pressed.png"].readBitmapSlice()
+                bitmap = resourcesVfs["Buttons/credits_pressed.png"].readBitmapSlice()
                 sceneContainer.changeTo<IntroScene>()
             }
         }
