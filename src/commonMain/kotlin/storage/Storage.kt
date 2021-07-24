@@ -36,7 +36,7 @@ class Storage private constructor(val storage : NativeStorage,val prefix : Strin
      */
     fun read(){
         storage.keys().filter { it.startsWith(prefix) }.forEach {
-            data[storage[it].drop(prefix.length)]=storage[it]
+            data[it.drop(prefix.length)]=storage[it]
         }
     }
 
