@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<course timeLimit="300" tileMap="tiledMaps/Night.tmx" scrolling="false" mapScale="2.0" music="musicSample.mp3">
+    <bgA source="tiledMaps/GrassLand_Background_2.png" xScrollRate="1.0" yScrollRate="1.0" xOffset="100.0" yOffset="50.0" scale="1.0">
+    </bgA>
+    <bgB source="tiledMaps/GrassLand_Background_1.png" xScrollRate="1.0" yScrollRate="1.0" xOffset="0.0" yOffset="0.0" scale="3.0">
+    </bgB>
+</course>

@@ -1,5 +1,6 @@
 package Scenes
 
+import CourseTestScene
 import com.soywiz.korge.input.onClick
 import com.soywiz.korge.input.onOut
 import com.soywiz.korge.input.onOver
@@ -36,7 +37,7 @@ class StartScene : Scene() {
             onOut { bitmap = resourcesVfs["Buttons/credits_unpressed.png"].readBitmapSlice() }
             onClick{
                 bitmap = resourcesVfs["Buttons/credits_pressed.png"].readBitmapSlice()
-                sceneContainer.changeTo<IntroScene>()
+                sceneContainer.changeTo<CourseTestScene>()
             }
         }
         addChild(creditsbutton)

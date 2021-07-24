@@ -21,6 +21,7 @@ object GameModule : Module() {
     override suspend fun AsyncInjector.configure() {
         mapPrototype { IntroScene() }
         mapPrototype { StartScene() }
+        mapPrototype { CourseTestScene() }
 
         //views().gameWindow.fullscreen = true
 
