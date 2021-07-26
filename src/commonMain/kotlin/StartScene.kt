@@ -9,10 +9,14 @@ import com.soywiz.korge.view.Container
 import com.soywiz.korge.view.Image
 import com.soywiz.korge.view.position
 import com.soywiz.korim.format.readBitmapSlice
+import com.soywiz.korio.async.launch
 import com.soywiz.korio.file.std.resourcesVfs
+import quality_of_life_functions.newSound
 
 class StartScene : Scene() {
     override suspend fun Container.sceneInit() {
+
+        val Button1Sound = newSound("Minecraft_Button.mp3")
 
         val background = Image(resourcesVfs["Backgrounds/Mainscreen.jpg"].readBitmapSlice(), 0.0)
         addChild(background)
@@ -23,6 +27,7 @@ class StartScene : Scene() {
             onOver { bitmap = resourcesVfs["Buttons/play_hover.png"].readBitmapSlice()}
             onOut { bitmap = resourcesVfs["Buttons/play_unpressed.png"].readBitmapSlice() }
             onClick{
+                launch { Button1Sound.play() }
                 bitmap = resourcesVfs["Buttons/play_pressed.png"].readBitmapSlice()
                 sceneContainer.changeTo<IntroScene>()
             }
@@ -35,6 +40,7 @@ class StartScene : Scene() {
             onOver { bitmap = resourcesVfs["Buttons/credits_hover.png"].readBitmapSlice()}
             onOut { bitmap = resourcesVfs["Buttons/credits_unpressed.png"].readBitmapSlice() }
             onClick{
+                launch { Button1Sound.play() }
                 bitmap = resourcesVfs["Buttons/credits_pressed.png"].readBitmapSlice()
                 sceneContainer.changeTo<IntroScene>()
             }
@@ -47,6 +53,7 @@ class StartScene : Scene() {
             onOver { bitmap = resourcesVfs["Buttons/exit_hover.png"].readBitmapSlice()}
             onOut { bitmap = resourcesVfs["Buttons/exit_unpressed.png"].readBitmapSlice() }
             onClick{
+                launch { Button1Sound.play() }
                 bitmap = resourcesVfs["Buttons/exit_pressed.png"].readBitmapSlice()
                 views.gameWindow.close()
             }
