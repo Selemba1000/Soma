@@ -40,14 +40,6 @@ class IntroScene : Scene() {
                     sceneContainer.changeTo<StartScene>()
                 }
             }
-            /*else {
-                if (tmp==120) {
-                    launch { sceneContainer.changeTo<StartScene>()}
-                }
-                tmp += 1
-            }
-
-             */
         }
     }
 }
