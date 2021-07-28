@@ -12,8 +12,8 @@ object GameModule : Module() {
 
     override val clipBorders: Boolean = false
     override val scaleAnchor: Anchor = Anchor.MIDDLE_CENTER
-    override val scaleMode: ScaleMode = ScaleMode.EXACT
-    override val mainScene: KClass<out Scene> = IntroScene::class
+    override val scaleMode: ScaleMode = ScaleMode.FIT
+    override val mainScene: KClass<out Scene> = CourseTestScene::class
     override val size: SizeInt = SizeInt(1920,1080)
     override val icon: String = "Logos/TaskBarLogo.png"
     override val title: String = "SOMA"
