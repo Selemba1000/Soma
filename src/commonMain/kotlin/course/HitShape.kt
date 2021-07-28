@@ -16,7 +16,7 @@ class HitShape(var x: Int, var y: Int, var points: List<Point>) {
     /**
      * Returns a List of Points, with the coordinates already applied.
      */
-    fun getPoints(): List<Point> {
+    fun getAllPoints(): List<Point> {
         return points.onEach { it.plus(Point(x, y)) }
     }
 
