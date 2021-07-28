@@ -32,6 +32,8 @@ class HitShape(var x: Int, var y: Int, var points: List<Point>) {
  */
 fun TiledMap.readHitShapes(tilelayer: Int = 0): List<HitShape> {
     val list = emptyList<HitShape>().toMutableList()
+    val tileWidth = this.tilewidth
+    val tileHeight = this.tileheight
 
     data.tilesets.onEach {
         for (j in 0 until this.height) {
@@ -39,8 +41,8 @@ fun TiledMap.readHitShapes(tilelayer: Int = 0): List<HitShape> {
                 if (it.tiles.firstOrNull { tile -> tile.id == tileLayers[tilelayer][i, j]-1 }?.objectGroup?.objects?.firstOrNull() != null) {
                     val obj = it.tiles.first { tile -> tile.id == tileLayers[tilelayer][i, j]-1 }.objectGroup?.objects?.first()
                     when (obj?.objectShape) {
-                        is TiledMap.Object.Shape.Rectangle -> list.add(HitShape(i, j, obj.bounds.toPoints()))
-                        is TiledMap.Object.Shape.Polygon -> list.add(HitShape(i, j, (obj.objectShape as TiledMap.Object.Shape.Polygon).points))
+                        is TiledMap.Object.Shape.Rectangle -> list.add(HitShape(i*tileWidth, j*tileHeight, obj.bounds.toPoints()))
+                        is TiledMap.Object.Shape.Polygon -> list.add(HitShape(i*tileWidth, j*tileHeight, (obj.objectShape as TiledMap.Object.Shape.Polygon).points))
                         else -> {}
                     }
                 }
