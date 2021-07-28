@@ -7,6 +7,11 @@ on:
       - 'README.md'
       - '.github/workflows/DEPLOY.yml'
       - '.gitignore'
+  workflow_dispatch:
+    paths-ignore:
+      - 'README.md'
+      - '.github/workflows/DEPLOY.yml'
+      - '.gitignore'
 
 env:
   NO_HEADLESS_TEST: true
