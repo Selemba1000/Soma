@@ -20,6 +20,10 @@ class HitShape(var x: Int, var y: Int, var points: List<Point>) {
         return points.onEach { it.plus(Point(x, y)) }
     }
 
+    override fun toString(): String {
+        return "[$x,$y]:$points"
+    }
+
 }
 
 /**
