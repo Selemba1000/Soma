@@ -1,17 +1,11 @@
 package Scenes
 
-import com.soywiz.korau.sound.PlaybackTimes
-import com.soywiz.korau.sound.Sound
-import com.soywiz.korau.sound.readSound
-import com.soywiz.korev.Key
 import com.soywiz.korge.scene.Scene
 import com.soywiz.korge.view.Container
 import com.soywiz.korge.view.Image
 import com.soywiz.korge.view.addUpdater
 import com.soywiz.korge.view.position
 import com.soywiz.korim.format.readBitmapSlice
-import com.soywiz.korio.file.Vfs
-import com.soywiz.korio.file.VfsFile
 import com.soywiz.korio.file.std.resourcesVfs
 import kotlinx.coroutines.launch
 import quality_of_life_functions.newSound

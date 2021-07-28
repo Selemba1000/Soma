@@ -1,10 +1,10 @@
 package Scenes
 
+
 import com.soywiz.korge.input.onClick
 import com.soywiz.korge.input.onOut
 import com.soywiz.korge.input.onOver
 import com.soywiz.korge.scene.Scene
-import com.soywiz.korge.ui.UIButton
 import com.soywiz.korge.view.Container
 import com.soywiz.korge.view.Image
 import com.soywiz.korge.view.position
@@ -12,6 +12,7 @@ import com.soywiz.korim.format.readBitmapSlice
 import com.soywiz.korio.async.launch
 import com.soywiz.korio.file.std.resourcesVfs
 import quality_of_life_functions.newSound
+import com.soywiz.korau.sound.*
 
 class StartScene : Scene() {
     override suspend fun Container.sceneInit() {
@@ -21,15 +22,23 @@ class StartScene : Scene() {
         val background = Image(resourcesVfs["Backgrounds/Mainscreen.jpg"].readBitmapSlice(), 0.0)
         addChild(background)
 
+        val TitleBackgroundSound = newSound("Titlescreenv3.wav")
+
+        val BackroundSoundChannel = AudioChannel()
+
+
         val startbutton = Image(resourcesVfs["Buttons/play_unpressed.png"].readBitmapSlice()).apply {
             position(GameModule.size.width / 2.0 - 144, GameModule.size.height / 2.0 - 171)
             scale = 0.3
             onOver { bitmap = resourcesVfs["Buttons/play_hover.png"].readBitmapSlice()}
             onOut { bitmap = resourcesVfs["Buttons/play_unpressed.png"].readBitmapSlice() }
             onClick{
+                BackroundSoundChannel.volume = 0.0
                 launch { Button1Sound.play() }
+
                 bitmap = resourcesVfs["Buttons/play_pressed.png"].readBitmapSlice()
                 sceneContainer.changeTo<IntroScene>()
+
             }
         }
         addChild(startbutton)
@@ -40,6 +49,7 @@ class StartScene : Scene() {
             onOver { bitmap = resourcesVfs["Buttons/credits_hover.png"].readBitmapSlice()}
             onOut { bitmap = resourcesVfs["Buttons/credits_unpressed.png"].readBitmapSlice() }
             onClick{
+                BackroundSoundChannel.volume = 0.0
                 launch { Button1Sound.play() }
                 bitmap = resourcesVfs["Buttons/credits_pressed.png"].readBitmapSlice()
                 sceneContainer.changeTo<IntroScene>()
@@ -53,6 +63,7 @@ class StartScene : Scene() {
             onOver { bitmap = resourcesVfs["Buttons/exit_hover.png"].readBitmapSlice()}
             onOut { bitmap = resourcesVfs["Buttons/exit_unpressed.png"].readBitmapSlice() }
             onClick{
+                BackroundSoundChannel.volume = 0.0
                 launch { Button1Sound.play() }
                 bitmap = resourcesVfs["Buttons/exit_pressed.png"].readBitmapSlice()
                 views.gameWindow.close()
@@ -60,6 +71,12 @@ class StartScene : Scene() {
         }
         addChild(exitbutton)
 
+        BackroundSoundChannel.volume = 0.06
+        BackroundSoundChannel.play(TitleBackgroundSound, infinitePlaybackTimes)
+
+    }
+
+    override suspend fun sceneAfterInit() {
 
     }
 
