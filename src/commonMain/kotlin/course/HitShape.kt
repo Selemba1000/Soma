@@ -53,6 +53,14 @@ fun TiledMap.readHitShapes(tilelayer: Int = 0): List<HitShape> {
     return list
 }
 
+/**
+ * Scales a list of [Hitshapes][HitShape] to a given scale.
+ * @param scale The scale to use.
+ */
+fun List<HitShape>.scaleTo(scale:Double):List<HitShape>{
+    return this.onEach { it.points.onEach { it.mul(scale) } }
+}
+
 private fun Rectangle.toPoints(): List<Point> {
     return listOf(
         Point(this.x, this.y),
