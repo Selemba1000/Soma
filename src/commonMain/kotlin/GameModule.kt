@@ -23,7 +23,7 @@ object GameModule : Module() {
         mapPrototype { IntroScene() }
         mapPrototype { StartScene() }
 
-        views().gameWindow.fullscreen = true
+        //views().gameWindow.fullscreen = true
 
     }
 }
